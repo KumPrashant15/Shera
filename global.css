@@ -1,0 +1,577 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: alpen;
+    src: url(./assets/alpen-jack-font/AlpenJack-lgAV0.ttf);
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(./assets/cookie-crisp-font/CookieCrisp-L36ly.ttf);
+}
+
+@font-face {
+    font-family: sanAndreas;
+    src: url(./assets/sans-andreas-font/SansAndreasDemoBold-ax2xo.ttf);
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    background-color: transparent;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.transparent {
+    background-color: transparent;
+    box-shadow: 0 1px 5px black; 
+}
+
+.navbar.scrolled {
+    background-color: #296903;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-family: alpen;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    color: #74ee3c;
+    transform: scale(1.1);
+}
+
+.download-button {
+    background-color: #058612;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 20px;
+    font-family: alpen;
+}
+
+.download-button i {
+    margin-right: 5px;
+}
+
+.download-button:hover {
+    background-color: #058612;
+    transform: scale(1.1);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #063c08; 
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #063c08;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+.nav-active {
+    display: flex !important;
+}
+
+.landing-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: linear-gradient(75.7deg, rgb(34, 126, 34) 3.8%, rgb(99, 162, 17) 87.1%);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.landing-page svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.landing-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.landing-content h1 {
+    font-size: 3em;
+    font-family: sanAndreas, sans-serif;
+    margin-bottom: 20px;
+    color: #cce94b;
+}
+
+.landing-content p {
+    font-size: 1.2em;
+    color: #dbcdcd;
+    line-height: 1.6;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.landing-download {
+    margin-top: 80px; 
+    font-size: 1.2em;
+    text-decoration: none;
+    width: 200px;
+    margin-left: 20%; 
+    background-color:#065518;
+}
+
+.image-section {
+    flex: 1;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.features {
+    width: 100%;
+    padding: 0 8%;
+    background-image: url('./assets/light-olive-green-watercolor-texture-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.features h1 {
+    text-align: center;
+    padding-top: 8%;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.features h1::after {
+    content: '';
+    background: #063c08;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 50px;
+    width: 100%;
+}
+
+.service {
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 9px 30% 9px 9px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.7s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0px 0px 10px green;
+}
+
+.service i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #044409;
+}
+
+.service h2 {
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding: 20px;
+}
+
+.service:hover {
+    background: #296903;
+    color: #dbcdcd;
+    transform: scale(1.05);
+}
+
+.service:hover i {
+    color: #dbcdcd;
+}
+
+.about {
+    width: 100%;
+    padding: 5% 8%;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.about h1 {
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.about h1::after {
+    content: '';
+    background: #063c08;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 50px;
+}
+
+.about-section {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+
+
+.about-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-download {
+    display: inline-block;
+    margin-top: 40px;
+    background-color: #058612;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.about-download i {
+    margin-right: 5px;
+}
+
+.about-download:hover {
+    background-color: #044409;
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 1024px) {
+    .landing-content h1 {
+        font-size: 2.5em;
+    }
+
+    .landing-content p {
+        margin-left: 10%;
+    }
+
+    .landing-download {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .landing-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .landing-content h1 {
+        font-size: 2em;
+    }
+
+    .landing-content p {
+        margin-left: 0;
+        margin-top: 2%;
+    }
+
+    .landing-download {
+        margin: 40px auto 0 auto;
+    }
+
+    .image-section img {
+        position: relative;
+        top: 0;
+        transform: none;
+    }
+
+    .features h1 {
+        padding-top: 20%;
+    }
+
+    .service {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .landing-content h1 {
+        font-size: 1.5em;
+    }
+
+    .landing-content p {
+        font-size: 1em;
+    }
+
+    .landing-download {
+        width: 150px;
+        font-size: 1em;
+    }
+
+    .service i {
+        font-size: 30px;
+    }
+
+    .service h2 {
+        font-size: 1em;
+    }
+}
+
+
+.reviews-section {
+    width: 100%;
+    padding: 5% 8%;
+    background-color:#b3ed98;
+    text-align: center;
+    
+}
+
+.reviews-section h1 {
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.reviews-section h1::after {
+    content: '';
+    background: #063c08;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    height: 300px; 
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    height: 100%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: radial-gradient(circle at 10% 20%, rgb(85, 149, 27) 0.1%, rgb(183, 219, 87) 90%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.slide span {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #058612;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #044409;
+}
+
+@media screen and (max-width: 768px) {
+    .slider-container {
+        width: 100%;
+    }
+
+    .slide p {
+        font-size: 1em;
+    }
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background: #296903;
+    min-height: 100px;
+    padding: 20px 50px;
+    overflow: hidden; 
+}
+
+footer::before,
+footer::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 50%;
+    z-index: 0; 
+}
+
+footer::before {
+    top: -50px;
+    left: -50px;
+}
+
+footer::after {
+    bottom: -50px;
+    right: -50px;
+}
+
+footer p {
+    position: relative;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1; 
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 20px 20px;
+    }
+
+    footer::before,
+    footer::after {
+        width: 80px;
+        height: 80px;
+    }
+}
